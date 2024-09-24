@@ -7,7 +7,7 @@ function readConfig(fileName) {
     return data.reduce((config, line) => {
         const [key, value] = line.split("=");
         if (key && value) {
-            config[key.trim()] = value.trim(); // Trim whitespace
+            config[key.trim()] = value.trim(); 
         }
         return config;
     }, {});

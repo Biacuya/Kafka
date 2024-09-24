@@ -13,29 +13,6 @@ function readConfig(fileName) {
     }, {});
 }
 
-// const produceRequest = (request, config) => {
-//     const producer = new Kafka.Producer(config);
-//     producer.connect();
-//     producer.on("ready", () => {
-//       // Enviar la solicitud al topic de solicitudes
-//       producer.produce("request_topic", -1, Buffer.from(JSON.stringify(request)));
-//       console.log(`Sent request: ${JSON.stringify(request)}`);
-//     });
-//   };
-
-//   const consumeResponse = (config) => {
-//     const consumer = new Kafka.KafkaConsumer(config, { "auto.offset.reset": "earliest" });
-//     consumer.connect();
-
-//     consumer.on("ready", () => {
-//       consumer.subscribe(["response_topic"]);
-//       consumer.consume();
-//     }).on("data", (message) => {
-//       const response = JSON.parse(message.value.toString());
-//       console.log(`Received response: ${JSON.stringify(response)}`);
-//     });
-//   };
-
 function produce(topic, config) {
     const key = "saludo_desde_a";
     const value = "Hola B";
